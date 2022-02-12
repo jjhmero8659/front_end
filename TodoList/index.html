@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>To Do List</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Gamja+Flower" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8">
+
+  <script>
+      function create_List(){
+        var List_td,check_td;
+        var List_text,check_input;
+        var add_tr;
+        var tbody_append;
+
+        check_td = document.createElement("td");
+        check_input = document.createElement("input");
+        check_input.setAttribute("type","checkbox");
+        check_input.setAttribute("class","btn-chk");
+        check_td.appendChild(check_input);
+
+        List_td = document.createElement("td");
+        List_text = document.createTextNode(document.getElementById("input_text").value);
+        List_td.appendChild(List_text);
+
+        add_tr = document.createElement("tr");
+        add_tr.appendChild(check_td);
+        add_tr.appendChild(List_td);
+
+        tbody_append = document.getElementById("listBody");
+        tbody_append.appendChild(add_tr);
+      }
+
+      function remove_all(){
+        var tbody = document.getElementById("listBody");
+        while(tbody.hasChildNodes()){
+            tbody.removeChild(tbody.firstElementChild);
+        }
+      }
+
+      function remove_last(){
+          var tbody = document.getElementById("listBody");
+          if(tbody.hasChildNodes()==true){
+              tbody.removeChild(tbody.lastElementChild);
+          }
+          // else{
+          //     alert("더이상 제거할 리스트가 없습니다!");
+          // }
+      }
+
+      function remove_select(){
+         var btn =document.getElementsByClassName("btn-chk"); //모든 엘리먼트 찾기
+        var tbody = document.getElementById("listBody");
+        for(var i=0; i<btn.length; i++){
+          if(btn[i].checked == true){
+              tbody.removeChild(tbody.children[i]);
+          }
+        }
+      }
+
+
+  </script>
+</head>
+
+<body>
+
+  <div class="list-box">
+
+    <h1>To Do List</h1>
+
+    <div class="write-box">
+
+      <input type="text" id="input_text" class="text-basic">
+
+      <button type="button" onclick="create_List()" id="btnAdd">추가</button>
+
+    </div>
+
+    <table class="list-table">
+
+      <colgroup>
+
+        <col width="10%">
+
+        <col width="90%">
+
+      </colgroup>
+
+      <thead>
+
+        <tr>
+
+          <th>check</th>
+
+          <th>To do List</th>
+
+        </tr>
+
+      </thead>
+
+      <tbody id="listBody">
+
+        <tr>
+
+          <td>
+
+            <input type="checkbox" class="btn-chk">
+
+          </td>
+
+          <td>
+
+            HTML + CSS 공부하기
+
+          </td>
+
+        </tr>
+
+        <tr>
+
+          <td>
+
+            <input type="checkbox" class="btn-chk">
+
+          </td>
+
+          <td>
+
+            JavaScript 공부하기
+
+          </td>
+
+        </tr>
+
+        <tr>
+
+          <td>
+
+            <input type="checkbox" class="btn-chk">
+
+          </td>
+
+          <td>
+
+            헬스 하기
+
+          </td>
+
+        </tr>
+
+      </tbody>
+
+    </table>
+
+    <div class="btn-area">
+
+      <button type="button" onclick="remove_select()" id="DeleteSel">선택 삭제</button>
+
+      <button type="button" onclick="remove_last()" id="btnDelLast">마지막 항목 삭제</button>
+
+      <button type="button" onclick="remove_all()" id="btnDelAll">전체 삭제</button>
+
+    </div>
+
+  </div>
+
+  <script type="text/javascript" src="js/app.js"></script>
+
+</body>
+
+</html>
