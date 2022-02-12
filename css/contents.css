@@ -1,0 +1,70 @@
+#contents
+{
+
+}
+
+#contents>#cont1
+{
+    
+}
+
+#contents>#cont1>.tab
+{
+    
+}
+
+.tab > .tab_btn>a{
+    display:inline-block;
+    width:150px;
+    height:40px;
+    background: #ffffff;
+    font-size:24px;
+    font-weight:bold;
+}
+
+#contents>#cont1>.tab_contents
+{
+    
+}
+
+.tab_contents>div:first-child{
+    background: #ffffff;
+}
+
+.tab_contents>div>.notice_list
+{
+    font-size:14px;
+}
+
+.tab_contents>div>.notice_list>li
+{
+    margin-bottom: 5px;
+}
+
+.tab_contents>div:nth-child(2){
+    background: #ffffff;
+    display:none;
+}
+
+.tab_contents>.gallery_list
+{
+    
+}
+
+.tab_contents>div>.gallery_list>li
+{
+    float:left;
+}
+
+.tab_contents>div>.gallery_list>li>a
+{
+    
+}
+
+.tab_contents>div>.gallery_list>li>a>img
+{
+    width:100px;
+    height:100px;
+
+    margin-right: 5px;
+}

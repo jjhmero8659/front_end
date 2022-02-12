@@ -1,0 +1,46 @@
+#footer
+{
+
+}
+
+#footer>.logo
+{
+    
+}
+
+#footer>.logo>img
+{
+    margin-left:10px;
+    margin-top:20px;
+}
+
+#footer>#right>.bottom
+{
+    padding-left:10px;
+    padding-top:10px;
+
+    box-sizing: border-box;
+}
+
+#footer>#right>.bottom>ul
+{
+    
+}
+
+#footer>#right>.bottom>ul>li
+{
+    float:left;
+    font-size:18px;
+    margin-right:5px;
+}
+
+#footer>#right>.copyright
+{
+    font-size:24px;
+}
+
+#footer>#right>.copyright>small
+{
+    position: relative;
+    left:10px;
+}

@@ -1,0 +1,71 @@
+/* popup */
+
+#popup {
+    display: none;
+    width: 500px;
+    height: 500px;
+    background: url("../images/popup_bg.jpg") no-repeat 0 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5000;
+    box-shadow: 0 0 4px #000;
+}
+
+#popup h2 {
+    margin-top: 47px;
+    font-size: 23px;
+}
+
+#popup h3 {
+    font-size: 35px;
+}
+
+#popup h2,
+#popup h3 {
+    text-align: center;
+}
+
+#popup figure {
+    margin: 15px 0;
+    text-align: center;
+}
+
+#popup ul {
+    margin-left: 120px;
+    list-style: disc;
+}
+
+#popup .title {
+    width: 50px;
+    display: inline-block;
+}
+
+#popup dl {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    display: inline-block;
+    height: 48px;
+}
+
+#popup dt,
+#popup dd {
+    display: inline-block;
+}
+
+#popup dt {
+    transform: translateY(-30%);
+    width: 60px;
+    height: 48px;
+    line-height: 48px;
+}
+
+#closeBtn {
+    width: 52px;
+    height: 52px;
+    position: absolute;
+    right: 11px;
+    top: 11px;
+}

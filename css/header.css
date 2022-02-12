@@ -1,0 +1,48 @@
+#header>.logo>img{
+    margin-top:30px;
+    margin-left:10px;
+}
+
+#header>.nav>.gnb{
+    padding-top:20px;
+    padding-left:20px;
+}
+
+
+.gnb>li:hover>a{
+    background:#222328;
+    color:#ffffff;
+}
+
+.lnb a:hover{
+    background:#222328;
+    color:#ffffff;
+}
+
+#header>.nav>.gnb>li>a{
+    display:block;
+    width:100px;
+    height:40px;
+    
+    text-align: center;
+    padding-top:10px;
+
+    font-weight: bold;
+    font-size:16px;
+}
+
+.lnb>li>a{
+    display:block;
+    width:100px;
+    height:40px;
+    background: #ffffff;
+    text-align: center;
+    padding-top:10px;
+
+    font-weight: bold;
+    font-size:16px;
+}
+
+.lnb{
+    display:none;
+}
