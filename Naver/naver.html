@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Css/naver.css" type="text/css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" ></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <title>Document</title>
+    <script>
+        $(function(){
+            var regExEngOrNum=/^[a-zA-Z0-9]*$/;
+
+            $(".status_icon").click(
+                function(){
+                    if($(this).hasClass("on")){
+                        $(this).removeClass("on");
+                        $(this).addClass("off");
+                    }
+                    else{
+                        $(this).removeClass("off");
+                        $(this).addClass("on");
+                    }
+                }
+            )
+
+            $(".security_icon").click(
+                function(){
+                    if($(this).hasClass("on")){
+                        $(this).removeClass("on");
+                        $(this).addClass("off");
+                    }
+                    else{
+                        $(this).removeClass("off");
+                        $(this).addClass("on");
+                    }
+                }
+            )
+
+            $(".gnb").click(
+                function(){
+                    $(this).find(".sub").slideToggle(200);
+                }
+            )
+            $(".gnb>a").click(
+                function(e){
+                    e.preventDefault();
+                }
+            )
+
+            $(".gnb .sub a").click(
+                function(e){
+                    e.preventDefault();
+                    var text = (this).text;
+                    var a_text;
+                    var ul = document.getElementById("front_a");
+
+                    a_text = ul.innerHTML;
+                    ul.innerHTML = text;
+                    $(this).text(a_text);
+
+                }
+            )
+
+            $(".next_box").click(
+                function(){
+                    var id = document.getElementById("id");
+                    var pw = document.getElementById("pw");
+
+                    if(regExEngOrNum.test(id.value) && regExEngOrNum.test(pw.value)){
+                        alert("완료입니다.");
+                    }
+                    else{
+                        alert("아이디 또는 비밀번호 형식이 올바르지 않습니다.");
+                    }
+                    
+                }
+            )
+        })
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <div class="logo"></div>
+            <div class="select">
+                <ul class="gnb">
+                    <a id="front_a" href="#">한국어</a>
+                    <ul class="sub">
+                        <li><a href="">영어</a></li>
+                        <li><a href="">중국어</a></li>
+                    </ul>
+                </ul>
+                <div class="Arrow"></div>
+            </div>
+            
+        </header>
+        <nav>
+            <div id="login">
+                <input id="id" type="text" placeholder="Username">
+                <input id="pw" type="password" placeholder="password">
+            </div>
+            <div class="next_box">로그인</div>
+    
+            <div class="check_icon">
+                <div class="status">
+                    <div class="status_icon off"></div>
+                    <p>로그인 상태 유지</p>
+                </div>
+    
+                <div class="security">
+                    <p>IP 보안</p>
+                    <div class="security_icon off"></div>
+                </div>
+                
+            </div>
+        </nav>
+        <footer>
+            <p>Easier sign in</p>
+            <div class="first">
+                <div class="icon"></div>
+                <p>Sign in with QR code</p>
+            </div>
+            <div class="second">
+                <div class="icon"></div>
+                <p>Facebook</p>
+            </div>
+            <div class="third">
+                <div class="icon"></div>
+                <p>line</p>
+            </div>
+    
+            <div class="sub_menu">
+                <ul>
+                    <li><a href="#">Username</a></li>
+                    <li><a href="#">password</a></li>
+                    <li><a href="#">Sign Up</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+    
+</body>
+</html>
