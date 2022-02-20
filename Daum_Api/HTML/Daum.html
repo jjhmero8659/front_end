@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+        <link rel="stylesheet" href="../CSS/Daum.css" type="text/css">
+        <script src="https://code.jquery.com/jquery-3.6.0.js" ></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+        <link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+        <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <script src="../JS/app.js"></script>
+        <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script> 
+        <script>
+            $(function(){
+                $("#find-address").click(
+                    function(){
+                        new daum.Postcode({
+                            oncomplete: function(data) {
+                                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분입니다.
+                                // 예제를 참고하여 다양한 활용법을 확인해 보세요.
+                                $("#zonecode").val(data.zonecode);
+                                $("#address").val(data.address);
+                            }
+                        }).open();
+                    }
+                )
+            })
+            
+        </script>
+    </head>
+</head>
+<body>
+    
+    <button id="find-address">주소검색</button>
+    <input type="text" id="zonecode">
+    <input type="text" id="address">
+</body>
+</html>
