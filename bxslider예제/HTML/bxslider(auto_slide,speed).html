@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" ></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/jquery.bxslider.css">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
+    <script src="../js/jquery.bxslider.js"></script>
+  
+    <script>
+      $(document).ready(function(){
+        $('.slider').bxSlider(
+          {
+            auto:true, // 자동재생
+            speed:500, //전환 되는 속도
+            pause:2000, // 전환 되고 사진이 머무는 시간
+            autoControls:true, //자동재생 제어창 보여주기
+            autoHover : true, //자동재생 제어창 보여주기
+            pager:false //페이저 (페이지 버튼 제거)
+          }
+        );
+      });
+    </script>
+
+    <style>
+      #outer{
+        width: 600px;
+        height: 300px;
+      }
+    </style>
+</head>
+<body>
+  <div id="outer">
+    <div class="slider">
+      <div>
+        <img src="../images/img1.jpg">
+      </div>
+      <div>
+        <img src="../images/img2.jpg">
+      </div>
+      <div>
+        <img src="../images/img3.jpg">
+      </div>
+   </div>
+  </div>
+</body>
+</html>
