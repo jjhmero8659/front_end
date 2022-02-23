@@ -1,0 +1,168 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+li{
+	list-style: none;
+}
+
+a{
+	text-decoration: none;
+}
+body,html{
+    width: 100%;
+    height: 100%;
+    background-color: #eaeaea;
+}
+#wrap{
+    width: 100%;
+    height: 100%;
+}
+
+#contents{
+    margin: 10px auto;
+    width: 1000px;
+    height: 700px;
+    background-color: black;
+    overflow: hidden;
+}
+
+.img_wrap{
+    float: left;
+    width: 500px;
+    height: 800px;
+    background-color: #241818;
+}
+
+.Oredr_wrap{
+    float: left;
+    width: 500px;
+    height: 800px;
+    background-color: aliceblue;
+}
+
+.img_wrap>img{
+    display: block;
+    width: 437px;
+    height: 609px;
+    margin: 45.5px auto;
+
+}
+.Title{
+    width: 100%;
+    height: 500px;
+    background-color: rgb(173, 184, 194);
+}
+.section_wrap{
+    position: relative;
+    width: 100%;
+    height: 90px;
+}
+
+.section1 ,.section2{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0 auto;
+    width: 80%;
+    height: 30px;
+}
+
+.section1{
+    top: 10px;
+    z-index: 500;
+}
+.section2{
+    top: 50px;
+    z-index: 400;
+}
+
+.gnb{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+}
+
+.gnb>li>a::before{
+    display: block;
+    position: absolute;
+    right: 5px;
+    top: 0px;
+    content: "\e943";
+    font-family: "xeicon";
+    font-size: 25px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.gnb>li>a.special:before{
+    content: "\e946";
+}
+
+.gnb a{
+    display: block;
+    box-sizing: border-box;
+    border: 1px solid #d9d9d9;
+    padding-left: 20px;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    z-index: 100;
+    color: #000;
+    font-size: 15px;
+    background-color: #fff;
+}
+
+.sub{
+    display: none;
+}
+
+.sub a{
+    border-top: none;
+}
+
+.select_button{
+    width: 100%;
+    height: 210px;
+    background-color: rgb(65, 52, 52);
+    box-sizing: border-box;
+    padding-top: 30px;
+}
+
+.select_button>div{
+    width: 450px;
+    height: 50px;
+    margin: 0px auto;
+}
+
+.select_button>div>div{
+    width: 220px;
+    height: 50px;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 50px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.shopping_basket{
+    float: left;
+    background-color: #fff;
+    border: 1px solid #d9d9d9;
+    color: #000;
+}
+
+.shopping_basket:hover{
+    color: rgba(0, 0, 0,.5);
+}
+
+.buy{
+    float: right;
+    background-color: #2e8de5;
+    border: 1px solid #217fd7;
+    color: #fff;
+}
+
+.buy:hover{
+    color: rgba(0, 0, 0,.5);
+}
