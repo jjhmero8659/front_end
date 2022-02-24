@@ -23,7 +23,6 @@ body,html{
     margin: 10px auto;
     width: 1000px;
     height: 700px;
-    background-color: black;
     overflow: hidden;
 }
 
@@ -31,14 +30,13 @@ body,html{
     float: left;
     width: 500px;
     height: 800px;
-    background-color: #241818;
+    background-color: #000;
 }
 
-.Oredr_wrap{
+.Order_wrap{
     float: left;
     width: 500px;
     height: 800px;
-    background-color: aliceblue;
 }
 
 .img_wrap>img{
@@ -50,13 +48,13 @@ body,html{
 }
 .Title{
     width: 100%;
-    height: 500px;
+    height: 200px;
     background-color: rgb(173, 184, 194);
 }
 .section_wrap{
     position: relative;
     width: 100%;
-    height: 90px;
+    height: 400px;
 }
 
 .section1 ,.section2{
@@ -69,12 +67,75 @@ body,html{
 }
 
 .section1{
-    top: 10px;
+    top: 20px;
     z-index: 500;
 }
 .section2{
-    top: 50px;
+    top: 60px;
     z-index: 400;
+}
+
+.Put_article{
+    position: absolute;
+    left: 50%;
+    top: 110px;
+    transform: translateX(-50%);
+    width: 80%;
+    height: auto;
+}
+.Put_article>.Put_wrap{
+    width: 100%;
+    height: 240px;
+}
+
+.Put_wrap>.title{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    box-sizing: border-box;
+    background-color: #ddd;
+    border: 1px solid #000;
+}
+
+.Put_wrap>.put_list{
+    width: 100%;
+    height: 190px;
+    box-sizing: border-box;
+    padding-top: 20px;
+    padding-left: 20px;
+    background-color: #fff;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+
+.Put_article>.Total_price_wrap{
+    width: 100%;
+    height: 40px;
+}
+
+.Total_price_wrap>div{
+    float: left;
+    display: block;
+    line-height: 40px;
+    height: 40px;
+    box-sizing: border-box;  
+    background-color: #ddd;
+    font-size: 14px;
+    padding-left: 10px;
+    border:1px solid #000;
+}
+.Total_price_wrap>.Total_price{
+    width: 25%;
+}
+.Total_price_wrap>.Total_price_text{
+    width: 75%;
+    border-left: none;
+}
+
+.Total_price{
+    height: 40px;
 }
 
 .gnb{
@@ -112,6 +173,14 @@ body,html{
     font-size: 15px;
     background-color: #fff;
 }
+.transparency{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 30px;
+    background-color: rgba(0, 0, 0, .5);
+}
 
 .sub{
     display: none;
@@ -124,7 +193,6 @@ body,html{
 .select_button{
     width: 100%;
     height: 210px;
-    background-color: rgb(65, 52, 52);
     box-sizing: border-box;
     padding-top: 30px;
 }
