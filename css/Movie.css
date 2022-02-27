@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+#Movie_wrap{
+    width: 100%;
+    height: 100px;
+    background-color: aliceblue;
+    margin-bottom: 10px;
+}
+
+
+img{
+    width: 100%;
+    height: 100px;
+}

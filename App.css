@@ -1,0 +1,32 @@
+
+#App{
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+  background-color: antiquewhite;
+}
+
+.left_side , .right_side{
+  float: left;
+  width: 50%;
+  height: 100px;
+}
+
+.right_side > div {
+  width: 100%;
+  height: 33.33%;
+  line-height: 30px;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: #eaeaea;
+}
+
+.right_side > div:nth-child(n+2):nth-child(-n+3){
+  border-top: none;
+}
+
+img{
+  width: 100%;
+  height: 100%;
+}
