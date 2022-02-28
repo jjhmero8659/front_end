@@ -99,17 +99,71 @@ body,html{
 }
 
 .Put_wrap>.put_list{
+    position: relative;
     width: 100%;
     height: 190px;
     box-sizing: border-box;
-    padding-top: 20px;
-    padding-left: 20px;
+    /* padding-top: 20px;
+    padding-left: 20px; */
     overflow: hidden;
     background-color: #fff;
     border-left: 1px solid #000;
     border-right: 1px solid #000;
     border-bottom: 1px solid #000;
 }
+
+.put_list>ul{
+    position: absolute;
+    width: 100%;
+}
+
+.put_list .product{
+    position: relative;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    box-sizing: border-box;
+    padding-left: 10px;
+    border-bottom: 1px solid #eaeaea;
+    color: #000;
+}
+
+.product > div{
+    position: absolute;
+    top: 50%;
+    box-sizing: border-box;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border: 1px solid #eaeaea;
+    text-align: center;
+    box-shadow: 1px 1px 1px #eaeaea;
+}
+
+.product .count{
+    line-height: 20px;
+    right: 70px;
+    font-size: 12px;
+}
+
+.product>div a{
+    display: block;
+    width: 100%;
+    line-height: 18px;
+}
+
+.product > .add{
+    right: 40px;
+}
+.product > .remove{
+    right: 10px;
+}
+
+.product > .add:hover , .product > .remove:hover{
+    background-color: #ddd;
+}
+
+
 
 .Put_article>.Total_price_wrap{
     width: 100%;
