@@ -1,14 +1,19 @@
 $(function(){
+    var Prevent_overlap_pro_li = new Array();
     const product_array = [
         ["Horizon zero dawn Complete","Horizon zero dawn Forbidden West"],
         ["MonsterHunter Normal","MonsterHunter Iceborn","MonsterHunter Rise"]
     ]
     const price_array = [
+        ["0","0"],
+        ["0","0","0"]
+    ]
+    const product_count = [
         ["35000","47000"],
         ["22000","35000","53000"]
     ]
     const img_src_arr = ["../images/Horizon.jpeg","../images/MONSTER_Iceborn.jpeg"]
-    var total_price = 0, product_count = 0;;
+    var total_price = 0,  pro_id_count = 0;;
     var row ,col;
 
     $(".gnb>li>a").click( // slide가 열고 닫히는 형태입니다.
@@ -125,17 +130,26 @@ $(function(){
     }
 
     function add_product_list(e){
-        product_count++;
-        alert("hi!")
+        var local_row = row;
+        var local_col = col;
+        pro_id_count++;
+        
+        for(var i=0; i<Prevent_overlap_pro_li.length; i++){ // 중복방지
+            if(product_array[local_row][local_col] == Prevent_overlap_pro_li[i]){
+                return 0;
+            }
+        }
+
         var doc_pro = document.createElement("div");
         doc_pro.setAttribute("id","num"+product_count);
         doc_pro.className = "product";
 
-        var doc_span_text = document.createTextNode(e.textContent);
+        var doc_span_text = document.createTextNode(product_array[local_row][local_col]);
         var doc_span = document.createElement("span");
         doc_span.appendChild(doc_span_text);
+        Prevent_overlap_pro_li.push(product_array[local_row][local_col]); // 중복방지
 
-        var doc_count_text = document.createTextNode("");
+        var doc_count_text = document.createTextNode(price_array[local_row][local_col]);
         var doc_count_div = document.createElement("div");
         doc_count_div.className = "count";
         doc_count_div.appendChild(doc_count_text);
@@ -145,7 +159,10 @@ $(function(){
         var doc_add_a = document.createElement("a");
         doc_add_a.setAttribute("href","javascript:void(0)");
         doc_add_a.onclick = function(){
-            //???
+            total_price =  total_price + Number(product_count[local_row][local_col]);
+            price_array[local_row][local_col]++;
+            doc_count_text.textContent = price_array[local_row][local_col];
+            $(".Total_price_text").empty().append(total_price + "원");
         }
         doc_add_a.appendChild(doc_add_text);
         var doc_add_div = document.createElement("div");
@@ -159,7 +176,12 @@ $(function(){
         doc_remove_a.setAttribute("href","javascript:void(0)");
         doc_remove_a.className = "remove";
         doc_remove_a.onclick = function(){
-            //???
+            if(price_array[local_row][local_col] > 0){
+                total_price = total_price - Number(product_count[local_row][local_col]);
+                price_array[local_row][local_col]--;
+                doc_count_text.textContent = price_array[local_row][local_col];
+                $(".Total_price_text").empty().append(total_price + "원");
+            } 
         }
         doc_remove_a.appendChild(doc_remove_text);
         var doc_remove_div = document.createElement("div");
