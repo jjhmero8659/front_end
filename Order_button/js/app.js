@@ -137,10 +137,13 @@ $(function(){
 
         for(var i=0; i<Prevent_overlap_pro_li.length; i++){ // 중복방지
             if(product_array[local_row][local_col] == Prevent_overlap_pro_li[i]){
+                alert("overlap")
+                console.log(product_array[local_row][local_col]);
+                console.log(Prevent_overlap_pro_li);
                 return 0;
             }
         }
-
+        
         var doc_pro = document.createElement("div");
         // doc_pro.setAttribute("id","num"+pro_id_count);
         doc_pro.className = "product";
@@ -148,7 +151,9 @@ $(function(){
         var doc_span_text = document.createTextNode(product_array[local_row][local_col]);
         var doc_span = document.createElement("span");
         doc_span.appendChild(doc_span_text);
+        console.log("PUSH :" + product_array[local_row][local_col] );
         Prevent_overlap_pro_li.push(product_array[local_row][local_col]); // 중복방지
+        console.log("add_list", Prevent_overlap_pro_li);
 
         var doc_count_text = document.createTextNode(product_count_array[local_row][local_col]);
         var doc_count_div = document.createElement("div");
@@ -162,14 +167,19 @@ $(function(){
         doc_delete_a.onclick = function(){
             doc_pro.remove();
             for(var i=0; i<Prevent_overlap_pro_li.length; i++){ // 제품선택시에 리스트 하나 추가후 delete 작동후 추가하면 error 발생
-                if(product_array[local_row][local_col] == Prevent_overlap_pro_li[i]){
-                    total_price -= (product_cost_array[local_row][local_col] * product_count_array[local_row][local_col]);
-                    product_count_array[local_row][local_col] = 0;
-                    doc_count_text.textContent = product_count_array[local_row][local_col];
-                    $(".Total_price_text").empty().append(total_price + "원");
-                    Prevent_overlap_pro_li.pop(Prevent_overlap_pro_li[i]); // 해당하는 문자열 중복에서 제거
-                }
+                if(product_array[local_row][local_col] == Prevent_overlap_pro_li[i]){ //push 한 list 에 제품명이 있다면
+                    total_price -= (product_cost_array[local_row][local_col] * product_count_array[local_row][local_col]); // 해당 제품명 count * 가격 만큼 총 가격에서 차감
+                    product_count_array[local_row][local_col] = 0; //delete 함으로써 해당 count 는 0으로 복구
+                    // doc_count_text.textContent = product_count_array[local_row][local_col]; //??
+                    $(".Total_price_text").empty().append(total_price + "원"); // 총 가격 재 입력
+                    Prevent_overlap_pro_li[i] = null // 해당하는 문자열 중복에서 제거
+    
+                    console.log("delete_onclick_after", Prevent_overlap_pro_li);
+                }   //문제 해결 , 하지만 배열이 null 값이 들어가므로 array.length가 계속 증가함
             }
+
+
+            
    
         }
         doc_delete_a.appendChild(doc_delete_text); 
@@ -182,10 +192,10 @@ $(function(){
         var doc_add_a = document.createElement("a");
         doc_add_a.setAttribute("href","javascript:void(0)");
         doc_add_a.onclick = function(){
-            total_price =  total_price + Number(product_cost_array[local_row][local_col]);
-            product_count_array[local_row][local_col]++;
-            doc_count_text.textContent = product_count_array[local_row][local_col];
-            $(".Total_price_text").empty().append(total_price + "원");
+            total_price =  total_price + Number(product_cost_array[local_row][local_col]); //총합에서 가격 추가
+            product_count_array[local_row][local_col]++;    //count 증가
+            doc_count_text.textContent = product_count_array[local_row][local_col]; // count 숫자 값 입력
+            $(".Total_price_text").empty().append(total_price + "원"); // 추가한 가격 계산한 총 가격 재 입력
         }
         doc_add_a.appendChild(doc_add_text); 
         var doc_add_div = document.createElement("div");
