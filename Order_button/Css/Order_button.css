@@ -25,6 +25,7 @@ body,html{
     width: 1000px;
     height: 700px;
     overflow: hidden;
+    border: 1px solid #000;
 }
 
 .img_wrap{
@@ -127,6 +128,24 @@ body,html{
     padding-left: 10px;
     border-bottom: 1px solid #eaeaea;
     color: #000;
+}
+
+.put_list>.delete_all{
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+    width: 80px;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+    font-size: 14px;
+    background-color: #eaeaea;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+.delete_all:hover{
+    background-color: #d3d3d3;
 }
 
 .product > div{

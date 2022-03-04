@@ -137,7 +137,7 @@ $(function(){
 
         for(var i=0; i<Prevent_overlap_pro_li.length; i++){ // 중복방지
             if(product_array[local_row][local_col] == Prevent_overlap_pro_li[i]){
-                alert("overlap")
+                // alert("overlap")
                 console.log(product_array[local_row][local_col]);
                 console.log(Prevent_overlap_pro_li);
                 return 0;
@@ -229,4 +229,25 @@ $(function(){
 
         document.getElementById("put_list_li").appendChild(doc_pro);
     }
+
+    $(".delete_all").click(
+        function(){
+            var i=0;
+            var put_list_li = document.getElementById("put_list_li");
+            var put_list_under_div = document.querySelectorAll("#put_list_li>div");
+
+           for(var i=0; i<put_list_under_div.length; i++){
+               put_list_li.removeChild(put_list_li.firstElementChild);
+           }
+           Prevent_overlap_pro_li.splice(0);
+           total_price = 0;
+           $(".Total_price_text").empty().append(total_price + "원");
+
+           for(var i=0; i<product_count_array.length; i++){
+                for(var z=0; z<product_count_array[i].length; z++){
+                    product_count_array[i][z] = 0;
+                }
+           }
+        }
+    )
 })
