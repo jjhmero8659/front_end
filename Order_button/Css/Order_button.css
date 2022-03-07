@@ -13,7 +13,8 @@ a{
 body,html{
     width: 100%;
     height: 100%;
-    background-color: #eaeaea;
+    /* background-color: #ddd; */
+    overflow: auto;
 }
 #wrap{
     width: 100%;
@@ -21,38 +22,122 @@ body,html{
 }
 
 #contents{
-    margin: 10px auto;
+    margin: 0 auto;
     width: 1000px;
-    height: 700px;
+    height: 100%;
+    background-color: #fff;
     overflow: hidden;
-    border: 1px solid #000;
 }
 
 .img_wrap{
+    position: relative;
     float: left;
     width: 500px;
-    height: 800px;
-    background-color: #000;
+    height: 100%;
+    box-sizing: border-box;
+    border-left: 1px solid #eaeaea;
+}
+
+.img_wrap .poster{
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 399px;
+    height: 581px;
+    box-shadow: 1px 1px 3px #000;
+}
+
+.poster  img{
+    display: block;
+    width: 399px;
+    height: 581px;
+}
+
+.Best_icon{
+    position: absolute;
+    left: 10%;
+    top: 50px;
+    width: 46px;
+    height: 20px;
+    z-index: 999;
+}
+
+.img_wrap .Review{
+    position: absolute;
+    left: 10%;
+    top: 650px;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.img_wrap .User_rating{
+    position: absolute;
+    left: 50%;
+    top: 650px;
+    width: 200px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.Review span:nth-child(2) , .User_rating span:nth-child(2){
+    font-size: 20px;
+    font-weight: 600;
+    color: gold;
+    text-shadow: 1px 1px 1px #000;
 }
 
 .Order_wrap{
     float: left;
     width: 500px;
-    height: 800px;
+    height: 1000px;
+    box-sizing: border-box;
+    border-left: 1px solid #eaeaea;
+    border-right: 1px solid #eaeaea;
 }
 
-.img_wrap>img{
-    display: block;
-    width: 437px;
-    height: 609px;
-    margin: 45.5px auto;
-
-}
 .Title{
+    position: relative;
     width: 100%;
-    height: 200px;
-    background-color: rgb(173, 184, 194);
+    height: 430px;
+    overflow: hidden;
 }
+
+.Title > h3{
+    margin-top: 20px;
+    margin-left: 7%;
+    width: 90%;
+    height: 60px;
+    line-height: 30px;
+    text-align: left;
+}
+
+.Title >.Membership_benefit_banner1{
+    position: absolute;
+    left: 50%;
+    bottom: 60px;
+    transform: translateX(-50%);
+    width: 430px;
+    height: 260px;
+    cursor: pointer;
+}
+
+.Title >.Membership_benefit_banner2{
+    position: absolute;
+    left: 50%;
+    bottom: 18px;
+    transform: translateX(-50%);
+    width: 430px;
+    height: 26px;
+    cursor: pointer;
+}
+
+.Membership_benefit>img{
+    width: 100%;
+    height: 100%;
+}
+
 .section_wrap{
     position: relative;
     width: 100%;
@@ -203,7 +288,7 @@ body,html{
     box-sizing: border-box;  
     background-color: #ddd;
     font-size: 14px;
-    padding-left: 10px;
+    text-align: center;
     border:1px solid #000;
 }
 .Total_price_wrap>.Total_price{
@@ -258,7 +343,7 @@ body,html{
     top: 0px;
     width: 100%;
     height: 30px;
-    background-color: rgba(0, 0, 0, .5);
+    background-color: rgba(0, 0, 0, .2);
 }
 
 .sub{
@@ -305,11 +390,12 @@ body,html{
 
 .buy{
     float: right;
-    background-color: #2e8de5;
-    border: 1px solid #217fd7;
+    background-color: #03c75a;
+    border: 1px solid #8ac007;
     color: #fff;
 }
 
 .buy:hover{
-    color: rgba(0, 0, 0,.5);
+    background-color: #00b150;
 }
+

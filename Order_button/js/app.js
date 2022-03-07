@@ -17,6 +17,8 @@ $(function(){
     var total_price = 0,  pro_id_count = 0;;
     var row ,col;
 
+    
+
     $(".gnb>li>a").click( // slide가 열고 닫히는 형태입니다.
         function(e){
             e.preventDefault();
@@ -68,13 +70,13 @@ $(function(){
 
         if($(".section1 .gnb>li>a").text() == "Horizon zero dawn"){ //첫번째 section 의 text가 horizon이라면?
             row = 0; 
-            $(".img_wrap img").attr({"src":img_src_arr[row]});
+            // $(".poster img").attr({"src":img_src_arr[row]});
 
             create_Dom();
         }
         else{ //첫번째 section 의 text가 Monster 이라면?
             row = 1;
-            $(".img_wrap img").attr({"src":img_src_arr[row]});
+            // $(".poster img").attr({"src":img_src_arr[row]});
             create_Dom();
         }
 
@@ -127,7 +129,7 @@ $(function(){
                 // total_price += Number(product_count_array[row][col]);
             }
         }
-        $(".Total_price_text").empty().append("0원"); //가격계산
+        $(".Total_price_text").empty().append(total_price +"원"); //가격계산
     }
 
     function add_product_list(e){
@@ -250,4 +252,13 @@ $(function(){
            }
         }
     )
+
+    $(".poster").slick({
+        slide: 'img',
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+	    autoplaySpeed: 3000,
+        arrows: false,
+    });
 })
