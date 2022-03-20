@@ -1,83 +1,49 @@
+const express = require("express")	
 
-const express = require("express");
-const app = express()
-const PORT = process.env.PORT || 4000;
+	const app = express()		
 
-const database = require("./config/db.js")
+	const PORT = process.env.PORT || 4000; 
+    const database = require("./database/database.js");
 
-//const database = require("./config/db1.js") //db 다중
-
-//const database = require("./config/db2.js")
+    const bodyParser = require("body-parser")
+    app.use(bodyParser.json());
 
 
-app.get("/api/get/personAll",(req,res) =>{
-  console.log("/api/get/personAll");
-  database.query("select * from person",(err,data) => {//연결된 db를 실행하겠다
-    if(!err){ // 오류가 없다면?
-      res.send({db_data : data});
-    }
-    else{ // 오류가 있다면?
-      console.log(err)
-    }
-  }) 
-})
+    app.get("/get/list",(req,res)=>{
+        database.query("select * from secondhand_car",(err,data)=>{
+            if(!err){
+                res.send({secondhand_car : data})
+            }
+            else{
+                console.log(err)
+            }
+        })
+    })
 
-app.get("/api/get/personWhere:name",(req,res) =>{
+    app.post("/post/list",(req,res)=>{
+        const name = req.body.name
+        const mileage = req.body.mileage
+        database.query(`insert into secondhand_car values(NULL,'${name}','${mileage}')`,(err,data)=>{
+            if(!err){
+                res.send({data:data})
+            }
+            else{
+                console.log(err)
+            }
+        })
+    })
 
-  const name = req.params.name
-  database.query(`select * from person where name='${name}'`,(err,data) => {//연결된 db를 실행하겠다
-    if(!err){ // 오류가 없다면?
-      res.send({db_data : data}); // res 와 console 중복 사용시 에러 발생
-    }
-    else{ // 오류가 있다면?
-      console.log(err)
-    }
-  }) 
-})
+    app.delete("/delete/list:num",(req,res)=>{
+        database.query(`delete from secondhand_car where num='${req.params.num}'`,(err,data)=>{
+            if(!err){
+                res.send({data:data})
+            }
+            else{
+                console.log(err)
+            }
+        })
+    })
 
-app.post("/api/add/person:name&:age&:height",(req,res) =>{
-  console.log("/api/add/person:name&:age&:height")
-  const name = req.params.name
-  const age = req.params.age
-  const height = req.params.height
-
-  database.query(`insert into person values('${name}','${age}','${height}')`,(err,data) => {//연결된 db를 실행하겠다
-    if(!err){ // 오류가 없다면?
-      res.send({info : data})
-    }
-    else{ // 오류가 있다면?
-      console.log(err)
-    }
-  }) 
-})
-
-app.patch("/api/update/person:name&:height",(req,res) =>{
-  const name = req.params.name
-  const height = req.params.height
-
-  database.query(`update person set height=${height} where name='${name}'`,(err,data) => {//연결된 db를 실행하겠다
-    if(!err){ // 오류가 없다면?
-      res.send({info : data})
-    }
-    else{ // 오류가 있다면?
-      console.log(err)
-    }
-  }) 
-})
-
-app.delete("/api/update/person:name",(req,res) =>{
-  const name = req.params.name
-
-  database.query(`delete from person where name="${name}"`,(err,data) => {//연결된 db를 실행하겠다
-    if(!err){ // 오류가 없다면?
-      res.send({info : data})
-    }
-    else{ // 오류가 있다면?
-      console.log(err)
-    }
-  }) 
-})
-
-app.listen(PORT,()=>{
-  console.log(`Server On : http://localhost:${PORT}`)
-})
+	app.listen(PORT, ()=>{ 
+    		console.log(`Server On:http://localhost: ${PORT}`)
+	})

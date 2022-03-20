@@ -1,7 +1,11 @@
-import "./App.css";
 import React , {Component} from "react";
 import axios from "axios";
-import Person from "./components/Person.js";
+
+import jquery from 'jquery';
+import Car from "./Component/Car.js";
+import $ from 'jquery';
+import "./App.css";
+
 
 
 class App extends Component{
@@ -9,66 +13,64 @@ class App extends Component{
     super(props)
 
     this.state = {
-      person_list : [],
+      List : [],
     }
   }
 
-  selectAll = async() =>{
-    const res = await axios.get("/api/get/personAll")
-    console.log(res.data.db_data);
+  componentDidMount(){
+    $(function(){    
+
+    });
+  }
+
+
+  get_List = async() =>{
+    const res = await axios.get("/get/list")
     this.setState({
-      person_list : res.data.db_data
+      List : res.data.secondhand_car
     })
-    //응답 객체에서 배열 뽑아서 우리쪽 state 넣어줌
+    console.log(this.state.List)
   }
 
-  selectWhere = async() =>{
-    const res = await axios.get("/api/get/personWhere"+"정채연")
-    console.log(res.data.db_data);
-    this.setState({
-      person_list : res.data.db_data
-    })
+  post_List = async() =>{
+    var input_name = document.getElementById("post_name_text").value
+    var input_mileage = document.getElementById("post_mileage_text").value
+    const PostObj = {name : input_name, mileage : input_mileage}
+    const res = await axios.post("/post/list",PostObj)
+    console.log(res.data);
+    document.getElementById("post_name_text").value = ""
+    document.getElementById("post_mileage_text").value = ""
   }
 
-  insertInto = async() =>{
-    const res = await axios.post(`/api/add/person${'김연아'}&${20}&${176.7}`)
-    console.log(res.data.info)
-    //응답 객체에서 배열 뽑아서 우리쪽 state 넣어줌
+  delete_List = async() =>{
+    const input_num = document.getElementById("delete_num_text").value
+    const res = await axios.delete(`/delete/list${input_num}`)
+    console.log(res.data);
+    document.getElementById("delete_num_text").value = ""
   }
-
-  updateSet = async() =>{
-    const res = await axios.patch(`/api/update/person${'김연아'}&${168.5}`)
-    console.log(res.data.info)
-  }
-
-  deleteWhere1 = async() => {
-    const res = await axios.delete(`/api/update/person${'김철수'}`)
-    console.log(res.data.info)
-  }
-
-  deleteWhere2 = async() => {
-    const res = await axios.delete(`/api/update/person${'김연아'}`)
-    console.log(res.data.info)
-  }
-
-
 
   render(){
-    const result = this.state.person_list.map(
-      data => 
-        <Person name = {data.name}
-          age = {data.age}
-          height = {data.height}/>
+    const result = this.state.List.map(
+      data => <Car
+        num = {data.num}
+        name = {data.name}
+        mileage = {data.mileage}
+      />
     )
     return(
       <div>
-        <button onClick={this.selectAll}>요청1(select * from person)</button>
-        <button onClick={this.selectWhere}>요청2(select * from person where name = "정채연")</button>
-        <button onClick={this.insertInto}>요청3(Insert into Person values("김철수",23,179.7))</button>
-        <button onClick={this.updateSet}>수정(Update set height=168.5 where name="김철수")</button>
-        <button onClick={this.deleteWhere1}>제거,김철수(delete from person where name="김철수")</button>
-        <button onClick={this.deleteWhere1}>제거,김연아(delete from person where name="김연아")</button>
         {result}
+        <div id="User_area">
+            <button id="check_List" onClick={this.get_List}>List 확인</button>
+            <input type="text" id = "post_name_text" placeholder="차량 name 값"></input>
+            <input type="text" id = "post_mileage_text" placeholder="차량 mileage 값 입력"></input>
+            <button id="post_Btn" onClick={this.post_List}>List 추가</button>
+
+            <input type="text" id = "delete_num_text" placeholder="제거할 차량 num 값 입력"></input>
+            <button id="delete_Btn" onClick={this.delete_List}>List 제거</button>
+        </div>
+        
+        
       </div>
     )
   }
