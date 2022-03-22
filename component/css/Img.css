@@ -1,12 +1,14 @@
 
 #Img_wrap{
-    margin: 10% auto;
-    width: 90%;
-    height: 40%;
-    box-shadow: 5px 5px 5px #000;
+    margin: 0 auto;
+    width: 100%;
+    height: 50%;
 }
 
-#Img_wrap>img{
-    width: 100%;
-    height: 100%;
+#Img_wrap img{
+    display: block;
+    margin: 30px auto;
+    width: 640px;
+    height: 400px;
+    box-shadow: 5px 5px 5px #000;
 }
