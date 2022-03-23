@@ -27,6 +27,17 @@ class Gpa extends Component{
                         </div>
                     </div>
                 </div>
+                <div className="review">
+                    <div className="expert_star">
+                        <span>전문가 평점 : </span>
+                        <span>4.8</span>
+                    </div>
+
+                    <div className="normal_star">
+                        <span>플레이어 평점 : </span>
+                        <span>4.3</span>
+                    </div>
+                </div>
             </div>
         )
     }

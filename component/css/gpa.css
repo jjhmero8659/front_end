@@ -1,7 +1,7 @@
 #Gpa_wrap{
     position: relative;
     width: 100%;
-    height: 40%;
+    height: 50%;
     /* background-color: aquamarine; */
 }
 
@@ -28,18 +28,18 @@
 }
 
 #normal{
-    top: 10px;
+    top: 0px;
 }
 
 #delux{
-    top: 120px;
+    top: 110px;
 }
 
 .add_basket_wrap{
     position: absolute;
     right: 20px;
     top: 50px;
-    width: 250px;
+    width: 40%;
     height: 40px;
     line-height: 40px;
     box-sizing: border-box;
@@ -69,4 +69,46 @@ background: linear-gradient(90deg, rgba(27,83,0,1) 0%, rgba(54,144,0,1) 55%, rgb
 .add_basket:hover{
     background: rgb(33,102,0);
 background: linear-gradient(90deg, rgba(33,102,0,1) 0%, rgba(59,158,0,1) 55%, rgba(73,204,0,1) 100%);
+}
+
+.review{
+    position: absolute;
+    bottom: 150px;
+    left: 0px;
+    width: 100%;
+    height: 40%;
+    box-sizing: border-box;
+    padding: 30px;
+}
+
+.review>div{
+    width: 45%;
+    height: 50px;
+    box-sizing: border-box;
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 15%, rgba(55,55,55,1) 100%);
+    padding-left: 30px;
+    border-radius: 3px;
+    box-shadow: 5px 5px 5px #000;
+}
+.expert_star{
+    float: left;
+}
+.normal_star{
+    float: right;
+}
+.review span{
+    display: inline-block;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 50px;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+.review span:nth-child(2){
+    padding-left: 20px;
+    font-size: 22px;
+    color: #ffd700;
+    font-weight: 700;
 }

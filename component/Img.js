@@ -24,6 +24,9 @@ class Img extends Component{
 
         return(
             <div id="Img_wrap">
+                <header>
+                    <img className="header_img" src={require("./img/Elden_Ring_Head.png")}></img>
+                </header>
                 <Slider {...settings}>
                     <div>
                         <img src={require("./img/Elden_Ring.jpeg")}></img>

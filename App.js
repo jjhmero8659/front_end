@@ -44,7 +44,7 @@ class App extends Component{
           <Gpa/>
         </div>
         <div className="right_side">
-          
+          <Product/>
         </div>
       </div>
     )
