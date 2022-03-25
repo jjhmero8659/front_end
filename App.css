@@ -29,6 +29,7 @@ body,html{
   background-image: url(./component/background_img/Elden_Ring_logo.png);
   background-repeat: none;
   background-size: cover;
+  background-position: -600px 0px;
   overflow: hidden;
 }
 

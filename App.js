@@ -29,14 +29,12 @@ class App extends Component{
   }
 
   render(){
-    // const result = this.state.secondhand_car.map(
-    //   data => <Car
-    //     num = {data.num}
-    //     name = {data.name}
-    //     mileage = {data.mileage}
-    //     accident = {data.mileage}
-    //   />
-    // )
+    const result = this.state.product.map(
+      data => <Product
+        name = {data.name}
+        price = {data.price}
+      />
+    )
     return(
       <div id="App_wrap">
         <div className="left_side">

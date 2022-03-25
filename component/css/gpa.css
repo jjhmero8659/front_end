@@ -16,7 +16,7 @@
     padding-left: 30px;
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#7d7e7d+0,7d7e7d+0,0e0e0e+100 */
     background: rgb(0,0,0);
-    background: linear-gradient(90deg, rgba(0,0,0,1) 15%, rgba(55,55,55,1) 100%);
+    background: linear-gradient(90deg, rgba(0,0,0,.7) 15%, rgba(55,55,55,1) 100%);
     box-shadow: 5px 5px 5px #000;
 }
 
@@ -86,7 +86,7 @@ background: linear-gradient(90deg, rgba(33,102,0,1) 0%, rgba(59,158,0,1) 55%, rg
     height: 50px;
     box-sizing: border-box;
     background: rgb(0,0,0);
-    background: linear-gradient(90deg, rgba(0,0,0,1) 15%, rgba(55,55,55,1) 100%);
+    background: linear-gradient(90deg, rgba(0,0,0,.5) 15%, rgba(55,55,55,1) 100%);
     padding-left: 30px;
     border-radius: 3px;
     box-shadow: 5px 5px 5px #000;
