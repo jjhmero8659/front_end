@@ -1,49 +1,75 @@
-import React, {Component} from "react";
-import axios from "axios";
-import Img from "./component/Img.js";
-import Gpa from "./component/gpa.js";
-import Product from "./component/Product.js";
-// import Post_list from "./component/Post_list";
-import "./App.css"
+import React ,{Component} from "react";
+import "./App.css";
+
+import List from "./Components/List.js"
+import Input from "./Components/Input.js"
 
 class App extends Component{
+  
   constructor(props){
-    super(props)
-    
-    this.state = {
-      product : []
+    super(props);
+
+    this.state = { 
+      Todo_List : [
+        {num:1,today:"코딩"},
+      ],
+      next_id : 2
     }
   }
-
-
-  get_List = async() => {
-    const res = await axios.get("/app/get_List")
+  add_list = (input_today) =>{
+    var List_Obj = {
+      num : this.state.next_id,
+      today : input_today
+    }
     this.setState({
-      product : res.data.List
+      Todo_List : this.state.Todo_List.concat(List_Obj),
+      next_id:this.state.next_id+1
+    })
+
+    // this.setState({
+    //   next_id:this.state.next_id+1
+    // })
+
+  }
+
+  Del_list = (num) =>{
+    
+    const filter_List = this.state.Todo_List.filter(
+      (data) => (data.num != num)
+    )
+    for(var i=0; i<filter_List.length; i++){
+      if(filter_List[i].num > num){
+        filter_List[i].num--;
+      }
+    }
+    
+    this.setState({
+      Todo_List : filter_List,
+      next_id:this.state.next_id-1
     })
   }
 
-  post_List = async() => {
-    const res = await axios.post("/app/post_List")
-    console.log(res.data.List)
-  }
 
   render(){
-    const result = this.state.product.map(
-      data => <Product
-        name = {data.name}
-        price = {data.price}
-      />
+    const result = this.state.Todo_List.map(
+      (data,index) => (<List
+          key = {index}
+          num = {data.num}
+          today = {data.today}
+          Del_list = {this.Del_list}
+      />)
     )
+    const result_input =  
+      <Input
+        add_list = {this.add_list}
+    />
+    
+
     return(
-      <div id="App_wrap">
-        <div className="left_side">
-          <Img/>
-          <Gpa/>
-        </div>
-        <div className="right_side">
-          <Product/>
-        </div>
+      <div id="App_Class_wrap">
+        <header>Todo_List</header>
+        {result_input}
+        {result}
       </div>
     )
   }
