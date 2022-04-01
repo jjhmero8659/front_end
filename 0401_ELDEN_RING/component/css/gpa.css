@@ -1,0 +1,123 @@
+#Gpa_wrap{
+    position: relative;
+    width: 100%;
+    height: 50%;
+    /* background-color: aquamarine; */
+}
+
+.Purchase{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 60px;
+    border-radius: 7px;
+    box-sizing: border-box;
+    padding-left: 30px;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#7d7e7d+0,7d7e7d+0,0e0e0e+100 */
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 15%, rgba(55,55,55,1) 100%);
+    box-shadow: 5px 5px 5px #000;
+}
+
+.Purchase>span{
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 50px;
+}
+
+#normal{
+    bottom: 70%;
+}
+
+#delux{
+    bottom: 45%;
+}
+
+.add_basket_wrap{
+    position: absolute;
+    right: 20px;
+    top: 45px;
+    width: 40%;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 7px;
+    box-sizing: border-box;
+    padding-left: 15px;
+    color: #fff;
+    font-size: 14px;
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 15%, rgba(55,55,55,1) 100%);
+}
+
+.add_basket{
+    position: absolute;
+    right: 1%;
+    top: 3px;
+    width: 55%;
+    height: 34px;
+    line-height: 34px;
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+    border-radius: 3px;
+    background: rgb(27,83,0);
+background: linear-gradient(90deg, rgba(27,83,0,1) 0%, rgba(54,144,0,1) 55%, rgba(66,184,0,1) 100%);
+    cursor: pointer;
+}
+
+.add_basket:hover{
+    background: rgb(33,102,0);
+background: linear-gradient(90deg, rgba(33,102,0,1) 0%, rgba(59,158,0,1) 55%, rgba(73,204,0,1) 100%);
+}
+
+.window_img{
+    position: absolute;
+    right: 8px;
+    top: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+/* .review{
+    position: absolute;
+    bottom: 30%;
+    left: 0px;
+    width: 100%;
+    height: 130px;
+    box-sizing: border-box;
+    padding: 30px;
+} */
+
+/* .review>div{
+    width: 45%;
+    height: 30px;
+    box-sizing: border-box;
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 15%, rgba(55,55,55,1) 100%);
+    padding-left: 30px;
+    border-radius: 3px;
+    box-shadow: 5px 5px 5px #000;
+}
+.expert_star{
+    float: left;
+}
+.normal_star{
+    float: right;
+}
+.review span{
+    display: inline-block;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 30px;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+.review span:nth-child(2){
+    padding-left: 20px;
+    font-size: 20px;
+    color: #ffd700;
+    font-weight: 700;
+} */
