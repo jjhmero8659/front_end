@@ -1,0 +1,7 @@
+#Posts_wrap{
+    width: 1000px;
+    height: 450px;
+    background-color: azure;
+    border: 1px solid #000;
+    box-sizing: border-box;
+}
