@@ -1,0 +1,213 @@
+#Product_wrap{
+    position: relative;
+    margin: 0 auto;
+    width: 80%;
+    height: 100%;
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(159,118,28,1) 100%);
+    border-radius: 10px;
+}
+
+.Select_product{
+    position: absolute;
+    left: 50%;
+    bottom: 0px;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 50%;
+    /* background-color: #ddd; */
+}
+
+.Select_product>.Select_main_product , .Select_product>.Select_detail{  /*width,height 따로 잡아줘야함*/
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 35px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.Select_main_product{
+    z-index: 101;
+    top: 0px;
+}
+
+.Select_detail{
+    z-index: 100;
+    top: 50px;
+}
+
+.transparency{
+    display: block;
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+    top: 50px;
+    height: 35px;
+    width: 91%;
+    background-color: rgb(59, 59, 59);
+    z-index: 100;
+}
+
+.gnb{
+    position: relative;
+    width: 100%;
+    height: 35px;
+}
+
+.gnb>li{
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+}
+
+.gnb>li a{
+    display: block;
+    padding-left: 20px;
+    box-sizing: border-box;
+    font-size : 16px;
+    width: 100%;
+    line-height: 35px;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.gnb>li>a{
+    position: relative;
+}
+
+
+.arrow{
+    position: absolute;
+    right: 4px;
+    top: 0px;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.arrow img{
+    width: 35px;
+    height: 35px;
+}
+
+
+
+
+.sub{
+    display: none;
+}
+
+.sub>li>a{
+    line-height: 35px;
+    border-top: 1px solid #ddd;
+    background-color: #fff;
+}
+.sub>li:last-child>a{
+    border-bottom: 1px solid #ddd;
+}
+
+.bascket_wrap{
+    position: absolute;
+    left: 0px;
+    top: 110px;
+    width: 100%;
+    height: 700px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.bascket_div{
+    margin: 20px auto;
+    width: 90%;
+    height: 70px;
+    background-color: #fff;
+    box-sizing: border-box;
+    border: 0.5px solid #ddd;
+}
+.bascket_div>div{
+    width: 100%;
+    height: 35px;
+}
+.bascket_title{
+    box-sizing: border-box;
+}
+.bascket_title>p{
+    margin: 0 auto;
+    width: 95%;
+    padding-left: 16px;
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 35px;
+    border-bottom: 0.5px solid #ddd;
+}
+
+.Additional_function{
+    position: relative;
+}
+
+.Additional_function>#quantity , .Additional_function>.delete_product{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-image: url(../background_img/sp_vipgroup.png);
+    cursor: pointer;
+}
+
+.Additional_function>.product_add{
+    left: 130px;
+    width: 21px;
+    height: 21px;
+    background-position: -48px -74px;
+}
+
+.Additional_function>.product_subtract{
+    left: 35px;
+    width: 21px;
+    height: 21px;
+    background-position: 0 -74px;
+}
+
+.product_subtract:hover{
+    background-position: -24px -74px;
+}
+.product_add:hover{
+    background-position: -72px -74px;
+}
+.Additional_function>input{
+    position: absolute;
+    left: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 20px;
+    box-sizing: border-box;
+    padding-left: 15px;
+}
+.Additional_function>.price{
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 200px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid #ddd;
+}
+.Additional_function>.delete_product{
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 26px;
+    height: 26px;
+    background-position: -442px -122px;
+}
+.delete_product:hover{
+    background-position: -462px -122px;
+}
