@@ -1,0 +1,19 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+#App_wrap{
+  margin: 0 auto;
+  width: 1000px;
+  height: 500px;
+  background-color: aliceblue;
+}
