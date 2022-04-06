@@ -1,0 +1,88 @@
+#Header_wrap{
+    position: relative;
+    top: 0px;
+    left: -10%;
+    width: 120%;
+    height: 40px;
+}
+#Header_wrap>div{
+    position: absolute;
+    height: 40px;
+    text-align: center; 
+    line-height: 40px;
+}
+
+#Header_wrap>.Logo{ 
+    top: 0px;
+    left: 20px;  
+    width: 150px;   
+    border: 1px solid #ddd;
+}
+
+#Header_wrap>.Category{
+    position: absolute;
+    left: 230px;
+    top: 0px;
+    width: 150px;
+    height: 40px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+#Header_wrap>.Search_product{
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    background-color: aliceblue;
+}
+
+.Search_product>.Search{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 90%;
+    height: 40px;
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-right: none ;
+    box-sizing: border-box;
+    outline: none;
+    padding-left: 20px;
+    text-align: left;
+    font-size: 14px;
+}
+.Search_product>.Search_icon{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 10%;
+    height: 40px;
+    border-top: 1px solid #ddd;
+    border-left: none;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd ;
+    box-sizing: border-box;
+    background-color: #fff;
+    cursor: pointer;
+}
+.Search_icon>img{
+    width: 100%;
+}
+
+.User_Login{
+    top: 0px;
+    right: 20px;
+    width: 200px;
+    border: 1px solid #ddd;
+}
+
+.User_Login>a{
+    color : rgb(78, 78, 78);
+    font-size: 14px;
+}
