@@ -1,0 +1,29 @@
+#Posts_wrap{
+    width: 1000px;
+    height: 150px;
+    background-color: azure;
+}
+
+#Posts_wrap>div{
+    float: left;
+    height: 150px;
+    overflow: auto;
+}
+
+
+.title{
+    width: 200px;
+    background-color: aqua;
+}
+
+.img{
+    width: 100px;
+}
+.img>img{
+    width: 100%;
+}
+
+.description{
+    width: 700px;
+    overflow: auto;
+}
