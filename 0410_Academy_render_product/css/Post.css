@@ -1,0 +1,23 @@
+#Post_wrap{
+    width: 80%;
+    height: 50px;
+    background-color: azure;
+    overflow: hidden;
+    margin: 20px;
+}
+
+#Post_wrap>div{
+    float: left;
+}
+
+.Post_name{
+    width: 100px;
+    height: 50px;
+    background-color: yellow;
+}
+
+.Post_price{
+    width: 100px;
+    height: 50px;
+    background-color: green;
+}

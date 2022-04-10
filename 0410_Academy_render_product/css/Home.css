@@ -1,0 +1,19 @@
+#Home_wrap{
+    width: 100%;
+    height: 100%;
+}
+
+.select_wrap{
+    width: 100%;
+    height: 50px;
+    background-color: aliceblue;
+}
+
+.select_wrap>div{
+    float: left;
+    width: 100px;
+    height: 50px;
+    margin-left: 10px;
+    background-color: antiquewhite;
+    cursor: pointer;
+}

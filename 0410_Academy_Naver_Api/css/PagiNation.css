@@ -1,0 +1,18 @@
+#PagiNation_wrap{
+    width: 1000px;
+    height: 50px;
+    background-color: #000;
+    text-align: center;
+    line-height: 50px;
+}
+
+.page_icon{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    margin: 5px;
+    text-align: center;
+    background-color: #fff;
+    cursor: pointer;
+}
