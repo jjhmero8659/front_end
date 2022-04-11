@@ -1,0 +1,48 @@
+#Header_wrap{
+    position: relative;
+    top: 0px;
+    left: -10%;
+    width: 120%;
+    height: 40px;
+}
+#Header_wrap>div{
+    position: absolute;
+    height: 40px;
+    text-align: center; 
+    line-height: 40px;
+}
+
+#Header_wrap>.Logo{ 
+    top: 0px;
+    left: 20px;  
+    width: 150px;   
+    border: 1px solid #ddd;
+}
+
+#Header_wrap>.Category{
+    position: absolute;
+    left: 230px;
+    top: 0px;
+    width: 150px;
+    height: 40px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+
+
+.User_Login{
+    top: 0px;
+    right: 20px;
+    width: 200px;
+    border: 1px solid #ddd;
+}
+
+.User_Login>a{
+    color : rgb(78, 78, 78);
+    font-size: 14px;
+}

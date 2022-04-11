@@ -1,0 +1,30 @@
+#Change_Post_wrap{
+    width: 100%;
+    height: 70px;
+    text-align: center;
+    line-height: 70px;
+    border: 1px solid #ddd;
+}
+
+.Product_button{
+    display: inline-block;
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    box-sizing: border-box;
+    background-color: #ddd;
+    color: #000;
+    border-radius: 5px;
+    margin: 0 10px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000;
+}
+
+.Product_button:hover{
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+    background-color: #000;
+    color: #fff;
+    box-shadow: 1px 1px 1px #ddd;
+}
