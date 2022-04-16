@@ -1,0 +1,25 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+body,html,#root{
+  width: 100%;
+  height: 100%;
+  background-color: #eaeaea;
+}
+
+#App_wrap{
+  margin: 20px auto;
+  width: 800px;
+  height: 700px;
+  background-color: #ddd;
+}
