@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="./fourth.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="1_Title"> First Title </h1>
+    <p id="1_Body"> First Body <p>
+    <h2 id="2_Title"> Second Title </h1>
+    <p id="2_Body"> Second Body <p>
+    <h2 id="3_Title"> Third Title </h1>
+    <p id="3_Body"> Third Body <p>
+    <h2 id="4_Title"> Forth Title </h1>
+    <p id="4_Body"> Forth Body <p>
+    <h2 id="5_Title"> Fifth Title </h1>
+    <p id="5_Body"> Fifth Body <p>
+    <form >
+    <b>CMD</b>
+    <select id="First_select" name="" onchange="check_value()">
+        <option value="Modify">Modify</option>
+        <option value="Delete">Delete</option>
+    </select>
+    <select id="Second_select" name="">
+        <option value="Color">Color</option>
+        <option value="BG-Color">BG-Color</option>
+        <option value="Text">Text</option>
+    </select>
+    <span id="to_span">to</span>
+    <input id="text_input" type='text'/>
+    where
+        <select id="Third_select" name="">
+        <option value="1">First</option>
+        <option value="2">Second</option>
+        <option value="3">Third</option>
+        <option value="4">Fourth</option>
+        <option value="5">Fifth</option>
+        <option value="5">Last</option>
+        <option value="Even">Even</option>
+        <option value="Odd">Odd</option>
+        <option value="All">All</option>
+    </select>
+    <select id="Fourth_select" name="">
+        <option value="Title">Title</option>
+        <option value="Body">Body</option>
+    </select>
+    <input type="button" value="OK" onclick="submit_btn()"/>
+    </form>
+    </body>
+</html>
